@@ -1,7 +1,7 @@
 # Semantic Release Action
 [![CI](https://github.com/hgdata/semantic-release-action/actions/workflows/release.yml/badge.svg)](https://github.com/hgdata/semantic-release-action/actions/workflows/release.yml)
 
-GitHub Action for [Semantic Release][https://semantic-release.gitbook.io/semantic-release/]. 
+GitHub Action for [Semantic Release](https://semantic-release.gitbook.io/semantic-release/).
 
 ## Usage
 1. Set any [Semantic Release configuration](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration) in your repository.
