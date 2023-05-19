@@ -20,9 +20,18 @@ inputs:
   dry_run:
     required: false
     description: 'Whether to run semantic release in `dry-run` mode. It will override the dryRun attribute in your configuration file'
+  ci:
+    required: false
+    description: 'Whether to run semantic release with CI support (default: true). It will override the ci attribute in your configuration file'
   extends:
     required: false
     description: 'One or several sharable configurations, https://semantic-release.gitbook.io/semantic-release/usage/configuration#extends'
+  working_directory:
+    required: false
+    description: 'Specify another working directory for semantic release. Default one is provided by github.'
+  tag_format:
+    required: false
+    description: 'The default tag format on semantic-release is v{version}. You can override that behavior using this option.'
 outputs:
   new_release_published:
     description: 'Whether a new release was published'
@@ -38,6 +47,16 @@ outputs:
     description: 'The distribution channel on which the last release was initially made available (undefined for the default distribution channel).'
   new_release_notes:
     description: 'The release notes for the new release.'
+  new_release_git_head:
+    description: 'The sha of the last commit being part of the new release.'
+  new_release_git_tag:
+    description: 'The Git tag associated with the new release.'
+  last_release_version:
+    description: 'Version of the previous release, if there was one.'
+  last_release_git_head:
+    description: 'The sha of the last commit being part of the last release, if there was one.'
+  last_release_git_tag:
+    description: 'The Git tag associated with the last release, if there was one.'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
