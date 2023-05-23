@@ -60,6 +60,25 @@ exports.handleDryRunOption = () => {
 };
 
 /**
+ * Handle Ci Option
+ * @returns {{}|{ci: boolean}}
+ */
+exports.handleCiOption = () => {
+  const ci = core.getInput(inputs.ci);
+
+  switch (ci) {
+    case 'true':
+      return { ci: true, noCi: false };
+
+    case 'false':
+      return { ci: false, noCi: true };
+
+    default:
+      return {};
+  }
+};
+
+/**
  * Handle Extends Option
  * @returns {{}|{extends: Array}|{extends: String}}
  */
@@ -67,7 +86,27 @@ exports.handleExtends = () => {
   const extend = core.getInput(inputs.extends);
 
   if (extend) {
-    return { extends: extend };
+    const extendModuleNames = extend.split(/\r?\n/)
+      .map((name) => name.replace(/(?<!^)@.+/, ''))
+    return {
+      extends: extendModuleNames
+    };
+  } else {
+    return {};
+  }
+};
+
+/**
+ * Handle TagFormat Option
+ * @returns {{}|{tagFormat: String}}
+ */
+exports.handleTagFormat = () => {
+  const tagFormat = core.getInput(inputs.tag_format);
+
+  if (tagFormat) {
+    return {
+      tagFormat
+    };
   } else {
     return {};
   }
