@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [develop, main]
 
-
 jobs:
   release:
     name: Release
@@ -14,12 +13,15 @@ jobs:
     steps:
       - name: Checkout
         uses: hgdata/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Semantic release
         uses: ./
         id: semantic
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_REPO_TOKEN_PUBLIC }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           extends: |
@@ -29,4 +31,4 @@ jobs:
         if: steps.semantic.outputs.new_release_published == 'true'
         run: "git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/v${{steps.semantic.outputs.new_release_major_version}}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_REPO_TOKEN_PUBLIC }}
