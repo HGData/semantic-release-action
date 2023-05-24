@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/hgdata/semantic-release-action/compare/v1.0.1...v1.1.0) (2023-05-24)
+
+
+### Bug Fixes
+
+* update GITHUB_TOKEN (#29) ([3242911](https://github.com/hgdata/semantic-release-action/commit/3242911dca0e89ad0e5cd8e2a424caf72ebe8fc7)), closes [#29](https://github.com/hgdata/semantic-release-action/issues/29)
+* use hgdata actions (#28) ([4276545](https://github.com/hgdata/semantic-release-action/commit/427654534945fa7f0f3ceed17fbd95003b2fec65)), closes [#28](https://github.com/hgdata/semantic-release-action/issues/28)
+
+
+### Features
+
+* port features, update deps, node16 (#27) ([83b827e](https://github.com/hgdata/semantic-release-action/commit/83b827e1cf3ad1876d1196b948091c37e714f666)), closes [#27](https://github.com/hgdata/semantic-release-action/issues/27)
+
 ## [1.0.1](https://github.com/hgdata/semantic-release-action/compare/v1.0.0...v1.0.1) (2022-06-30)
 
 
