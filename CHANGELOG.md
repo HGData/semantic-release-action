@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/hgdata/semantic-release-action/compare/v1.1.0...v1.1.1) (2023-06-05)
+
+
+### Bug Fixes
+
+* lastRelease will be an empty object if not detected so need to check (#30) ([2a7b4fd](https://github.com/hgdata/semantic-release-action/commit/2a7b4fd4d11a524aedd7587ef8a4a67d16ba15d2)), closes [#30](https://github.com/hgdata/semantic-release-action/issues/30)
+
 # [1.1.0](https://github.com/hgdata/semantic-release-action/compare/v1.0.1...v1.1.0) (2023-05-24)
 
 
