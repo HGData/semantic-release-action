@@ -14,7 +14,7 @@ module.exports = async (result) => {
 
   const { lastRelease, commits, nextRelease, releases } = result;
 
-  if (lastRelease.hasOwnProperty('version')) {
+  if (lastRelease !== undefined && lastRelease.hasOwnProperty('version')) {
     core.debug(`The last release was "${lastRelease.version}".`);
     core.setOutput(outputs.last_release_version, lastRelease.version);
     core.setOutput(outputs.last_release_git_head, lastRelease.gitHead);
