@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/hgdata/semantic-release-action/compare/v1.1.1...v1.1.2) (2023-06-08)
+
+
+### Bug Fixes
+
+* check lastRelease is not undefined (#31) ([d31bae1](https://github.com/hgdata/semantic-release-action/commit/d31bae140b352ac087a4e6d46a15e56af7601fcc)), closes [#31](https://github.com/hgdata/semantic-release-action/issues/31)
+
 ## [1.1.1](https://github.com/hgdata/semantic-release-action/compare/v1.1.0...v1.1.1) (2023-06-05)
 
 
